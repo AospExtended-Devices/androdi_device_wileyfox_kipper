@@ -25,3 +25,11 @@ TARGET_BOARD_INFO_FILE := device/wileyfox/kipper/board-info.txt
 TARGET_HW_DISK_ENCRYPTION := true
 BOARD_HAVE_QCOM_FM := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
+
+#Kernel
+#BOARD_KERNEL_SEPARATED_DT := true
+#TARGET_KERNEL_ARCH := arm64
+#TARGET_KERNEL_HEADER_ARCH := arm64
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+#KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
+#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin

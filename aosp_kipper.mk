@@ -1,29 +1,42 @@
-#
 # Copyright (C) 2017 The Pure Nexus Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, device/wileyfox/kipper/full_kipper.mk)
 
-# Inherit from kipper device
-$(call inherit-product, device/wileyfox/kipper/device.mk)
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/common.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := kipper
+#Build Type
+EXTENDED_BUILD_TYPE=OFFICIAL
+
+# Boot animation
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
+
+# Must define platform variant before including any common things
+TARGET_BOARD_PLATFORM_VARIANT := msm8939
+
 PRODUCT_NAME := aosp_kipper
-PRODUCT_BRAND := Wileyfox
-PRODUCT_MODEL := KIPPER
+BOARD_VENDOR := wileyfox
+PRODUCT_DEVICE := kipper
+
+PRODUCT_GMS_CLIENTID_BASE := android-wileyfox
+
 PRODUCT_MANUFACTURER := Wileyfox
+PRODUCT_MODEL := Wileyfox Storm
+
+PRODUCT_BRAND := Wileyfox
+TARGET_VENDOR := wileyfox
+TARGET_VENDOR_PRODUCT_NAME := Storm
+TARGET_VENDOR_DEVICE_NAME := kipper
